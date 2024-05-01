@@ -27,5 +27,31 @@ int main()
     }
     std::cout << "Second Largest :" << SecondLargest <<std::endl;
 
+        // 2. Approach Better Solution For Second Largest Element
+
+    int arr1[1000];
+    int n; 
+    std::cout << "ENter The Number Of Element in THe Given Array:";
+    std::cin >> n;
+    int Largest_element = arr1[0];
+    std::cout << "ENter The Element :";
+    for (int i = 0; i < n; i++) {
+        std::cin >> arr1[i];
+    }
+    for (int i = 0; i < n; i++) {
+
+        if (arr1[i] > Largest_element) {
+            Largest_element = arr1[i];
+        }
+    }
+    int Second_Largest_Element = -1;
+    for (int i = 0; i < n; i++) {
+        if (arr1[i] > Second_Largest_Element && arr1[i] != Largest_element) {
+            Second_Largest_Element = arr1[i];
+            
+        }
+    }
+    std::cout << "Second Largest Element is " << Second_Largest_Element << std::endl;
+
     return 0;
 }
